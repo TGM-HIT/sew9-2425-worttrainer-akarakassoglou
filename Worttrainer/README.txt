@@ -1,0 +1,1 @@
+Dieses Programm ist dafür da, Rechtschreibung zu üben, indem man Bildern ihre richtige Bezeichnung zuteilt.
