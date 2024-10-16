@@ -26,4 +26,6 @@ public class TestKlasse {
         e.setBild("https://www.google.com");
         assertEquals("https://www.google.com", e.getBild());
     }
+
+    //Testet ob gültige Wörter und URLs in Eintrag überprüft werden und prüft außerdem toString
 }

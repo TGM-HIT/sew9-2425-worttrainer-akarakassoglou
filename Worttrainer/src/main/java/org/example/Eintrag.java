@@ -67,16 +67,44 @@ public class Eintrag {
 		}
 	}
 
+	/**
+	 * Überprüft ob eine gültige URL übergeben wurde
+	 * @param txt neue url
+	 * @return ob gültig oder nicht
+	 */
 	public boolean checkBild(String txt) {
-		return false;
+		if(txt==null){
+			return false;
+		}
+		try {
+			new URL(txt).toURI();
+			return true;
+		}
+		catch (Exception e){
+			return false;
+		}
 	}
 
+
+	/**
+	 * Schaut ob wort gültig ist
+	 * @param wort
+	 * @return
+	 */
 	public boolean checkWort(String wort) {
-		return false;
+		if ((wort != null) && (wort.length() >= 2)) {
+			return true;
+		} else {
+			throw new IllegalArgumentException("Es muss ein Wort angegeben sein!");
+		}
 	}
 
+	/**
+	 * Überschreibung von toString
+	 * @return Wort, URL
+	 */
 	public String toString() {
-		return null;
+		return this.wort +"; "+ this.bild;
 	}
 
 }
