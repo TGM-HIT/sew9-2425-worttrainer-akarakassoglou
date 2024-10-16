@@ -38,7 +38,7 @@ public class Eintrag {
 	 * @param wort neues Wort
 	 */
 	public void setWort(String wort) {
-		if((wort!=null)&&(wort.length()>=2)){
+		if((wort!=null)){
 			this.wort = wort;
 		}
 		else{
