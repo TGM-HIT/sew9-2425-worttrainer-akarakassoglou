@@ -14,8 +14,6 @@ public class Trainer implements Umgang {
 
 	private Eintrag eintrag;
 
-	private Umgang umgang;
-
 	public Trainer(Eintraege liste) {
 
 	}
@@ -57,6 +55,16 @@ public class Trainer implements Umgang {
 	}
 
 	public void zurueck() {
+
+	}
+
+	@Override
+	public Trainer laden(String filename) {
+		return null;
+	}
+
+	@Override
+	public void speichern(String filename) {
 
 	}
 

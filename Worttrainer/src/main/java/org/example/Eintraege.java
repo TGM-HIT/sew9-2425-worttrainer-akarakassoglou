@@ -1,3 +1,5 @@
+package org.example;
+
 public class Eintraege {
 
 	private Eintrag[] eintraege;
