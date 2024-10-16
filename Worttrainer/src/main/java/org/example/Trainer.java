@@ -1,3 +1,5 @@
+package org.example;
+
 public class Trainer implements Umgang {
 
 	private int zAbgefragt;
