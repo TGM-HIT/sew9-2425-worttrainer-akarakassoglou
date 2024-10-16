@@ -50,4 +50,35 @@ public class TestKlasse {
         assertEquals("Test; https://www.google.de", e6.toString());
     }
 
+    //Testet die Trainer Klasse
+    @Test
+    @DisplayName("Test Trainer")
+    public void testTrainer() {
+        Trainer t = new Trainer();
+        Eintrag e = new Eintrag("Test", "https://www.google.de");
+        t.addEintrag(e);
+        assertEquals(1, t.getEintraege().size());
+        Eintrag e2 = new Eintrag("Test2", "https://www.google.com");
+        t.addEintrag(e2);
+        assertEquals(2, t.getEintraege().size());
+        Eintrag e3 = new Eintrag("Test3", "https://www.google.de");
+        t.addEintrag(e3);
+        assertEquals(3, t.getEintraege().size());
+        //teste ob ein zufälliger eintrag aus der Liste gewählt wird
+        t.setEintrag(e);
+        assertEquals(e, t.getEintrag());
+        assertNotNull(t.rndmEintrag());
+        //teste ob eintrag korrekt ist
+        assertTrue(t.check("Test"));
+        assertFalse(t.check("Test2"));
+        //teste tostring
+        assertEquals("Trainer{zAbgefragt=2, zKorrekt=1, eintrag=Test; https://www.google.de, eintraege=[Test; https://www.google.de, Test2; https://www.google.com, Test3; https://www.google.de]}", t.toString());
+        //setze abgefragt und korrekt zurück
+        t.zurueck();
+        assertEquals(0, t.getzAbgefragt());
+        assertEquals(0, t.getzKorrekt());
+
+
+    }
+
 }

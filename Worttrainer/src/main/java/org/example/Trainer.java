@@ -114,6 +114,24 @@ public class Trainer {
 	}
 
 	/**
+	 * Setter Eintrag
+	 * @param eintrag neuer Eintrag
+	 */
+	public void setEintrag(Eintrag eintrag) {
+		if(eintrag==null){
+			throw new IllegalArgumentException("Der Eintrag darf nicht null sein!");
+		}
+		this.eintrag = eintrag;
+	}
+
+	/**
+	 * Getter Eintraege
+	 */
+	public ArrayList<Eintrag> getEintraege() {
+		return this.eintraege;
+	}
+
+	/**
 	 * Überprüft ob der mitgegebene Text, dem eines Eintrags entspricht
 	 * @param txt mitgegebenes Wort
 	 * @return ob entspricht oder nicht
