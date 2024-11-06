@@ -81,4 +81,23 @@ public class TestKlasse {
 
     }
 
+    //Testet Speichern und Laden
+    @Test
+    @DisplayName("Test Speichern und Laden")
+    public void testSpeichernLaden() {
+        Trainer t = new Trainer();
+        Eintrag e = new Eintrag("Test", "https://www.google.de");
+        t.addEintrag(e);
+        Eintrag e2 = new Eintrag("Test2", "https://www.google.com");
+        t.addEintrag(e2);
+        Eintrag e3 = new Eintrag("Test3", "https://www.google.de");
+        t.addEintrag(e3);
+        SpeichernAusWortTrainerTXT s = new SpeichernAusWortTrainerTXT(t);
+        s.speichern("test.txt");
+        Trainer t2 = new LadenAusWortTrainerTXT().laden("test.txt");
+        assertEquals(t.getEintraege().size(), t2.getEintraege().size());
+        assertEquals(t.getzAbgefragt(), t2.getzAbgefragt());
+        assertEquals(t.getzKorrekt(), t2.getzKorrekt());
+    }
+
 }
