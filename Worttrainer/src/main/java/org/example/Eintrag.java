@@ -72,7 +72,7 @@ public class Eintrag {
 	 * @param txt neue url
 	 * @return ob gültig oder nicht
 	 */
-	public boolean checkBild(String txt) {
+	public static boolean checkBild(String txt) {
 		if(txt==null){
 			return false;
 		}
@@ -91,7 +91,7 @@ public class Eintrag {
 	 * @param wort
 	 * @return
 	 */
-	public boolean checkWort(String wort) {
+	public static boolean checkWort(String wort) {
 		if ((wort != null) && (wort.length() >= 2)) {
 			return true;
 		} else {

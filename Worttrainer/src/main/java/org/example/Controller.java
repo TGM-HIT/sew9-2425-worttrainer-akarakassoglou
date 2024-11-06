@@ -113,6 +113,24 @@ public class Controller implements ActionListener, KeyListener {
 			} catch (IllegalArgumentException ex) {
 				JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
 			}
+		} else if (ac.equals("hinzufügen")) {
+			boolean isLegal = true;
+			String wort = JOptionPane.showInputDialog(null, "Bitte das Wort eingeben:");
+			try {
+				Eintrag.checkWort(wort);
+			} catch (Exception ex) {
+				isLegal = false;
+				JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
+			}
+			if (isLegal) {
+				String URL = JOptionPane.showInputDialog(null, "Bitte die URL eingeben:");
+				try {
+					isLegal = Eintrag.checkBild(URL);
+				} catch (Exception exc) {
+					JOptionPane.showMessageDialog(null, exc.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
+				}
+				if (isLegal) this.t.addEintrag(new Eintrag(wort, URL));
+			}
 		}
 	}
 
