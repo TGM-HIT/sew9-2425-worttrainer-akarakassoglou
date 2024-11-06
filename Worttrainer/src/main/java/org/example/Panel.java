@@ -14,13 +14,13 @@ import java.net.URL;
 
 public class Panel extends JPanel {
 
-	private JTextField eingabe;
+	private JTextField eingabe = new JTextField();
 
-	private JLabel korrekt;
+	private JLabel korrekt = new JLabel("0");
 
-	private JLabel gesamt;
+	private JLabel gesamt = new JLabel("0");
 
-	private JLabel bild;
+	private JLabel bild = new JLabel();
 
 	private Controller c;
 

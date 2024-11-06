@@ -36,6 +36,7 @@ public class Trainer {
 		}
 		else{
 			this.eintraege=eintraege;
+			this.setEintrag(rndmEintrag());
 		}
 	}
 
@@ -110,6 +111,9 @@ public class Trainer {
 	 * @return
 	 */
 	public Eintrag getEintrag() {
+		if(this.eintrag==null){
+			throw new IllegalArgumentException("Es wurde noch kein aktueller Worteintrag ausgewählt!");
+		}
 		return this.eintrag;
 	}
 
