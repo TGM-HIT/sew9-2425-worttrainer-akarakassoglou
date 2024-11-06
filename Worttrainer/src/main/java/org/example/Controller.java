@@ -102,6 +102,17 @@ public class Controller implements ActionListener, KeyListener {
 					JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
 				}
 			}
+		} else if (ac.equals("Speichern")) {
+			try {
+				JFileChooser fc = new JFileChooser();
+				if (fc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+					String pfad = fc.getSelectedFile().getAbsolutePath();
+					SpeichernAusWortTrainerTXT s = new SpeichernAusWortTrainerTXT(this.t);
+					s.speichern(pfad);
+				}
+			} catch (IllegalArgumentException ex) {
+				JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.WARNING_MESSAGE);
+			}
 		}
 	}
 
